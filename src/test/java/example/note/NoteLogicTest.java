@@ -4,6 +4,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * Тест функционала класса NoteLogic
+ */
 class NoteLogicTest {
     private NoteLogic note;
 
@@ -12,6 +16,9 @@ class NoteLogicTest {
         this.note = new NoteLogic();
     }
 
+    /**
+     * тест на обработку комманды /add
+     */
     @Test
     public void handleAddNoteTest(){
         String addResult = note.handleMessage("/add node1");
@@ -23,6 +30,9 @@ class NoteLogicTest {
                 """, note.handleMessage("/notes"));
     }
 
+    /**
+     * тест на обработку комманды /edit
+     */
     @Test
     public void handleEditNoteTest(){
         note.handleMessage("/add node1");
@@ -35,6 +45,9 @@ class NoteLogicTest {
                 """, note.handleMessage("/notes"));
     }
 
+    /**
+     * тест на обработку комманды /del
+     */
     @Test
     public void handleDeleteNoteTest(){
         note.handleMessage("/add node1");
@@ -48,6 +61,9 @@ class NoteLogicTest {
                 """, note.handleMessage("/notes"));
     }
 
+    /**
+     * тест на обработку комманды /notes
+     */
     @Test
     public void notesTest() {
         assertEquals("Your notes:", note.handleMessage("/notes"));

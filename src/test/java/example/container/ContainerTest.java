@@ -10,10 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class ContainerTest {
     private Container container;
-
-    /**
-     * Инициализация объекта-контейнера
-     */
     @BeforeEach
     void init() {
         this.container = new Container();
